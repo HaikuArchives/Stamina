@@ -1,0 +1,263 @@
+<HTML>
+<HEAD>
+  <META NAME="AUTHOR" CONTENT="Sylvain Demongeot">
+  <META NAME="COPYRIGHT" CONTENT="Copyright 1998-2002, Sylvain Demongeot">
+  <META NAME="DESCRIPTION" CONTENT="Web offline browsing utilities for the BeOS">
+  <META NAME="KEYWORDS" CONTENT="Web,WWW,internet,offline,browser,capture,tool,utility,proxy,BeOS,software,shareware">
+  <LINK REL="STYLESHEET" TYPE="text/css" HREF="../../main.css">
+  <STYLE type="text/css">
+  <!--
+	BODY {margin-left: 20; margin-right: 20;}
+  -->
+  </STYLE>
+  <TITLE>Stamina &amp; Charisma 1.4 user's guide</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H4 ALIGN=CENTER><IMG SRC="images/sctitle.gif" WIDTH="288" HEIGHT="91" 
+ALIGN="BOTTOM" NATURALSIZEFLAG="3"></H4>
+
+<H4 ALIGN=CENTER>v1.4 - &copy; 1998-1999, Sylvain Demongeot</H4>
+
+<H3>What is Stamina &amp; Charisma?</H3>
+
+<P>Stamina is a handy utility for capturing web sites onto your hard disk.
+You can browse the captured files offline through Charisma, a personal proxy
+server. Charisma will also fetch and cache unavailable data.</P>
+
+<P>Stamina &amp; Charisma v1.4 only run under BeOS
+R4 and later versions. They run best with NetPositive 2.0.</P>
+
+<H2>Topics</H2>
+
+<UL>
+  <LI><A HREF="#howstamina">How to use Stamina</A>
+  <LI><A HREF="#howcharisma">How to use Charisma</A>
+  <LI><A HREF="#tips">Tips and troubleshooting</A>
+  <LI><A HREF="#registering">Registering Stamina &amp; Charisma</A>
+</UL>
+
+<H2><A NAME="howstamina"></A><IMG SRC="images/staminaicon.gif" WIDTH="31"
+HEIGHT="32" ALIGN="MIDDLE" NATURALSIZEFLAG="3">&nbsp;How to use Stamina</H2>
+
+<UL>
+  <LI>Launch Stamina by double-clicking its icon.
+  <LI>If you have not registered yet, click the <B>Later</B> button in the
+  registration window.
+  <LI>Fill in the <B>From</B> field with the URL of the site you want to
+  capture.
+  <LI>Fill in the other options according to your mood (see details below).
+  <LI>Click on the <B>Start</B> button.
+  <LI>Wait until Stamina has finished (or press <B>Stop</B> when you have
+  enough).
+  <LI>That's all.
+</UL>
+
+<P><IMG SRC="images/staminarunning.gif" WIDTH="366" HEIGHT="261" ALIGN=
+"BOTTOM" NATURALSIZEFLAG="3"></P>
+
+<P>During the capture, you can't change the options, but you can watch the
+process in the <B>Stats</B> tab. If errors are encountered, they are logged
+to the bottom of the window.</P>
+
+<P>You can also start more captures by asking for a <B>New Window</B> in
+the <B>File</B> menu. But watch out for your bandwidth.</P>
+
+<P>Do you wish to grab the site that is currently displayed in NetPositive's
+window? Pull <B>Get URL from Net+</B> in the <B>Edit</B> menu. This will
+get the URL for you. If there are several NetPositive windows open, this
+command will cycle through them.</P>
+
+<H3>Stamina options explained</H3>
+
+<P><TABLE BORDER="0" CELLSPACING="5" CELLPADDING="0">
+<TR>
+<TD WIDTH="50%"><IMG SRC="images/wheretab.gif" WIDTH="269" HEIGHT="111" ALIGN="BOTTOM" 
+NATURALSIZEFLAG="3"></TD>
+<TD WIDTH="50%"><P>This tells Stamina where to go. If <B>Depth</B> is set to 0, only the
+page with the given URL will be captured (with its images and all the tra-la-la).
+If <B>Depth</B> is set to 1, the pages directly linked to this one will
+be captured, and so on.</P>
+
+<P>If <B>Same server</B> is chosen, links to other servers will be ignored,
+and if <B>Downwards</B> is demanded, only sub-directories of the base directory
+will be explored.</TD></TR>
+<TR>
+<TD WIDTH="50%"><IMG SRC="images/whattab.gif" WIDTH="269" HEIGHT="110" ALIGN="BOTTOM" NATURALSIZEFLAG=
+"3"></TD>
+<TD WIDTH="50%">This tells Stamina what to grab. These controls are self-explanatory, except
+for <B>Non-HTML</B>, which means &quot;follow links to non-HTML files&quot;,
+possibly files like &quot;thebigfile.zip&quot; or stand-alone images.</TD></TR>
+<TR>
+<TD WIDTH="50%"><IMG SRC="images/howtab.gif" WIDTH="269" HEIGHT="111" ALIGN="BOTTOM" NATURALSIZEFLAG=
+"3"></TD>
+<TD WIDTH="50%"><P>The trickiest is in <B>Smart Refresh</B>. If a site has already been
+visited by Stamina, Stamina will check that old files are not out of date.
+For instance, if you select <B>After 1 week</B>, Stamina will check all
+files that have not been checked for 1 week. <B>Always</B> means &quot;always
+check&quot;. <B>Dumb</B> means &quot;always retrieve document, even if it
+seams up-to-date&quot; (this may help if your cache is corrupted).</P>
+
+<P><B>Max connections</B> is the maximum number of simultaneous connections
+to the Internet.</TD></TR>
+</TABLE>
+</P>
+
+<P>All these options may be saved for future re-use (item <B>Save</B> in
+menu <B>File</B>). You can later refresh your data by just opening your
+Stamina file and clicking <B>Start</B>.</P>
+
+<P><TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD WIDTH="46%" VALIGN="TOP"><H3>So where do all the files go ?</H3>
+
+<P>The captured files are carefully strored according to their origin host
+and hierarchy in a folder named <B>/boot/home/theWWW</B>. You can try to
+view them with Net+ from there, but it is not a very good idea, since absolute
+links (containing <B>http://</B>) will not point to the cached data. This
+is where the Charisma stuff starts.</TD>
+<TD WIDTH="54%" VALIGN="TOP" ALIGN="CENTER">&nbsp;<IMG SRC="images/thewww.gif" WIDTH="209" HEIGHT="203" ALIGN="BOTTOM"
+NATURALSIZEFLAG="3"></TD></TR>
+</TABLE>
+</P>
+
+<H2><A NAME="howcharisma"></A><IMG SRC="images/charismaicon.gif" WIDTH=
+"31" HEIGHT="31" ALIGN="MIDDLE" NATURALSIZEFLAG="3">&nbsp;How to use Charisma</H2>
+
+<H2><TABLE WIDTH="100%" BORDER="0" CELLSPACING="2" CELLPADDING="0">
+<TR>
+<TD WIDTH="50%"><UL>
+  <LI>Launch Charisma by double-clicking its icon
+  <LI>If you have not registered yet, click the <B>Later</B> button in the
+  registration window.
+  <LI>Configure NetPositive to use Charisma as a proxy server, by enabling
+  <B>Net+ Autosettings</B> in Charisma's <B>Settings</B> menu.
+  <LI>Choose Charisma's mode to be <B>Offline</B>
+  <LI>You can now browse your captured files offline. Just use the same URLs
+  as usual. You can use your bookmarks, this is transparent to your browser.
+</UL>
+</TD>
+<TD WIDTH="50%" ALIGN="CENTER">&nbsp;<IMG SRC="images/charismawindow.gif" WIDTH="176" HEIGHT="137" ALIGN=
+"BOTTOM" NATURALSIZEFLAG="3"></TD></TR>
+</TABLE>
+</H2>
+
+<H3>NetPositive autosettings</H3>
+
+<P>When <B>Net+ Autosettings</B> is enabled in Charisma's <B>Settings</B>
+menu, Charisma will automatically tell <B>NetPositive 2.0</B> to use Charisma
+as a proxy server. This results in NetPositive's settings window popping
+briefly. Charisma will also re-configure NetPositive to normal use when
+it quits or when it goes into <B>Disabled</B> mode.</P>
+
+<P>If this script magic fails (new version of NetPositive...), you must
+configure NetPositive yourself: enable proxies, set the HTTP proxy to be
+<B>127.0.0.1</B>, and the HTTP port to be <B>8080</B>. This also applies
+if you use some browser other than NetPositive.</P>
+
+<P><IMG SRC="images/npsettings3.gif" WIDTH="386" HEIGHT="128" ALIGN="BOTTOM"
+NATURALSIZEFLAG="3"></P>
+
+<H3>Charisma's modes</H3>
+
+<UL>
+  <LI><B>Disabled</B>: use this mode if you want to browse the Web directly.
+  Your browser will not use Charisma as a proxy, and no file will be added
+  to your Charisma web cache. Typically, you'll use <B>Disabled</B> if you
+  have troubles with forms, or if you want to use NetPositive's FTP.
+  <LI><B>Offline</B>: use this mode if you want to browse sites that you
+  have captured through Stamina or Charisma. Charisma will not attempt to
+  connect to the origin server if the file is not available in the cache.
+  In such a case it will, however, offer you to go into online mode (see
+  picture below). Typically, you'll use <B>Offline</B> when you're not connected
+  to the internet.
+  <LI><B>Online</B>: use this mode if you want to browse both cached and
+  unvisited sites. All new data will be added to the cache. Charisma will
+  also refresh already cached data after some delay, as set in the &quot;Refresh&quot;
+  menu (this is the same menu as in Stamina). Typically, you'll use <B>Online</B>
+  when you're connected to the internet.
+</UL>
+
+<H3><IMG SRC="images/notavail.gif" WIDTH="358" HEIGHT="216" ALIGN="BOTTOM"
+NATURALSIZEFLAG="3"></H3>
+
+<H3>Other features</H3>
+
+<UL>
+  <LI>You can test that Charisma is correctly interfaced with NetPositive
+  (or any other browser) by simply typing <B>charisma</B> as the URL. Charisma
+  will respond with a test page.
+  <LI>You can minimize Charisma 's Window by double-clicking its title bar.
+  Double-click its border to un-minimize it.
+  <LI>You can change the web directory's location for both Stamina and Charisma
+  by pulling <B>Select Web Directory</B> in Charisma's <B>Settings</B> menu.
+  This is useful if you want to store your data on some volume other than
+  the boot volume.
+</UL>
+
+<H2><A NAME="tips"></A>Tips and troubleshooting</H2>
+
+<H3>Auto-startup</H3>
+
+<P>If you want Charisma to start automatically after system boot, append
+the following line to the file <B>/boot/home/config/boot/UserBootscript</B>:</P>
+
+<P><TT>Launch application/x-vnd.SD-Charisma</TT></P>
+
+<H3>Cache jam</H3>
+
+<P>If your page fails to update although you have just refreshed it with
+Stamina, or if your page displays &quot;not in Charisma's cache&quot; although
+you know it actually is, it may be due to cache inconsistancy between Charisma
+and your bowser. Indeed, every browser including NetPositive has its own
+private cache which may contain older data. Try to refresh your page with
+your browser's <B>reload</B> button. If this fails, clear your browser's
+cache.</P>
+
+<H3>File jam</H3>
+
+<P>If your page or image has displayed without an error message but it is
+dirty or incomplete, then perhaps the corresponding file is damaged in such
+a way that Charisma can't know it is. There are two ways to fix this: either
+you manually remove the damaged file, or you set <B>Refresh</B> to be <B>dumb
+</B>(in Charisma), and you reload the file (then reset <B>Refresh</B> to
+normal, otherwise all files will always be reloaded).</P>
+
+<H2><A NAME="registering"></A>Registering Stamina &amp; Charisma</H2>
+
+<P>Stamina+Charisma are now unsupported and free. When asked for your name and code, enter
+<code>FREE</code> as the name and <code>A1-E586</code> as the code.
+</P>
+
+<P>Stamina &amp; Charisma 1.4 only run under BeOS
+R4 (PPC and Intel platforms).</P>
+
+<P>This software and its documentation can be distributed freely in the
+form of the original zip archive.</P>
+
+<P>Stamina &amp; Charisma 1.4 and this documentation &copy;1998-1999, Sylvain
+Demongeot</P>
+
+<H3>Disclaimer of warranty</H3>
+
+<P>In using this software, you understand and agree that this software is
+provided &quot;as is&quot; without warranty of any kind. The entire risk
+as to the results and performance of using this software lies entirely with
+you, the user. The author does not make any warranties, either expressed
+or implied, including but not limited to implied warranties of merchantability
+and fitness for a particular purpose, with respect to this software. In
+no event shall the author be liable for any consequential, incidental, or
+special damages whatsoever (including without limitation damages for loss
+of critical data, loss of profits, interruption of business, and the like)
+arising out of the use or inability to use this software.</P>
+
+<P>Although the author would appreciate any feedback and bug reports, the
+author shall not be responsible for correcting any problems which you discover.
+Furthermore, the author may at any time replace, modify, alter, improve,
+enhance or change this software.</P>
+
+<P><HR ALIGN=LEFT><FONT COLOR="#666666">This page &copy; Sylvain
+Demongeot, 1999-2002. Last update: Friday, 29-Mar-2002 20:48:23 CET.</P>
+
+</BODY>
+</HTML>
