@@ -1,0 +1,13 @@
+Stamina_file
+version=1
+URL=http://www.beatware.com/products/index.html
+depth=1
+where=same_server
+size_limit=no
+max_size=100K
+images=yes
+objects=yes
+frames=yes
+non-HTML=no
+smart_refresh=3
+max_sockets=5

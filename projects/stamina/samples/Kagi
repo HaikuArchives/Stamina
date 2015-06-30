@@ -1,0 +1,13 @@
+Stamina_file
+version=1
+URL=http://www.kagi.com/
+depth=2
+where=same_server
+size_limit=no
+max_size=100K
+images=yes
+objects=yes
+frames=yes
+non-HTML=no
+smart_refresh=3
+max_sockets=5
